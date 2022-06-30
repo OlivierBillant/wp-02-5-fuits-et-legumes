@@ -35,7 +35,7 @@ $query2 = new WP_Query([
             <?php endif; ?>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-            <img class="image-front" src="wp-content\themes\orange\img\screenshot.jpg" alt="">
+            <img class="image-front" src="wp-content\themes\concombre\img\screenshot.jpg" alt="">
         </div>
 
     </div>
@@ -57,11 +57,12 @@ $query2 = new WP_Query([
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h2 class="card-title"><?php the_title(); ?></h2>
-                            <!-- genere la balise img -->
-                            <p> <?php the_excerpt() ?>  <?php the_post_thumbnail('thumbnail', ['class'=>'rounded mx-auto d-block']) ?> </p>
+                            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail', ['class' => 'rounded mx-auto d-block']) ?></a>
+                                <h2 class="card-title"><?php the_title(); ?></h2>
+                                <!-- genere la balise img -->
+                                <p> <?php the_excerpt() ?> </p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer text-center">
                             <a href="<?php the_permalink() ?>" class="btn btn-primary">
                                 Voir plus</a>
                         </div>

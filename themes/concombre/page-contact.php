@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
+<div class="container px-4 px-lg-5">
 
 
-<?php
-while (have_posts()) :
-    the_post();
-?>
-    <div class="container px-4 px-lg-5">
+    <?php
+    while (have_posts()) :
+        the_post();
+    ?>
 
         <h1><?php the_title() ?></h1>
 
@@ -18,7 +18,7 @@ while (have_posts()) :
                 <input type="submit" class="btn btn-primary">
             </div>
         </form>
-    </div>
-<?php endwhile; ?>
+    <?php endwhile; ?>
 
+</div>
 <?php get_footer(); ?>

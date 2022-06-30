@@ -1,14 +1,17 @@
 <?php get_header(); ?>
 
-<?php
-while (have_posts()) :
-    the_post();
-?>
+<div class="container px-4 px-lg-5">
 
-    <h1><?php the_title() ?></h1>
+    <?php
+    while (have_posts()) :
+        the_post();
+    ?>
 
-    <p><?php the_content() ?></p>
+        <h1><?php the_title() ?></h1>
 
-<?php endwhile; ?>
+        <p><?php the_content() ?></p>
 
+    <?php endwhile; ?>
+
+</div>
 <?php get_footer(); ?>

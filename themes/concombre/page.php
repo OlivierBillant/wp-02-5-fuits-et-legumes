@@ -2,6 +2,7 @@
 <div class="container px-4 px-lg-5">
 
     <?php
+    
     while (have_posts()) :
         the_post();
     ?>
