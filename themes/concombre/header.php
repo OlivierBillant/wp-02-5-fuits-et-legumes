@@ -27,24 +27,6 @@
     </title>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="<?php echo get_home_url() ?>/"> <img class="icon" src="<?= get_site_icon_url() ?>" width="25"><?php
-                                                                                                                            bloginfo('name');
-                                                                                                                            ?></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_home_url() ?>/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo get_home_url() ?>/about-us">About </a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php the_permalink(21) ?>">Contact</a></li>
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
 
     <!-- wp peut ajouter css ou js -->
     <?php wp_head() ?>
@@ -52,3 +34,33 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="<?php echo get_home_url() ?>/"> <img class="icon" src="<?= get_site_icon_url() ?>" width="25"><?php
+                                                                                                                                        bloginfo('name');
+                                                                                                                                        ?></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_home_url() ?>/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_home_url() ?>/about-us">About </a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php the_permalink(21) ?>">Contact</a></li>
+                </ul> -->
+                <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <?php
+                    $menuParameters = array(
+                        'theme_location' => 'menu-haut',
+                        // 'menu_class' => 'text-light text-center',
+                        'container' => false,
+                        'echo' => '', // try: false
+                        'items_wrap' => '%3$s',
+                    );
+                    echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+                    ?>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav>
+    </nav>
