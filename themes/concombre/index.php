@@ -26,9 +26,11 @@ $query2 = new WP_Query([
                 while ($query1->have_posts()) :
                     $query1->the_post(); //j'enlève de la pile sinon boucle infinie
             ?>
-                    <h1 class="font-weight-light"><?php the_title() ?> </h1>
+                    <h1 class="font-weight-light ms-2"><?php the_title() ?> </h1>
                     <p><?php the_excerpt() ?></p>
-                    <a href="<?php the_permalink() ?>" class="btn btn-primary">Voir plus</a>
+                    <div class="text-center d-grid gap-2">
+                        <a href="<?php the_permalink() ?>" class="btn btn-success">Voir plus</a>
+                    </div>
                     <br>
                     <br>
                 <?php endwhile; ?>
@@ -58,13 +60,16 @@ $query2 = new WP_Query([
                     <div class="card h-100">
                         <div class="card-body">
                             <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail', ['class' => 'rounded mx-auto d-block']) ?></a>
-                                <h2 class="card-title"><?php the_title(); ?></h2>
-                                <!-- genere la balise img -->
-                                <p> <?php the_excerpt() ?> </p>
+                            <h2 class="card-title"><?php the_title(); ?></h2>
+                            <!-- genere la balise img -->
+                            <p> <?php the_excerpt() ?> </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="<?php the_permalink() ?>" class="btn btn-primary">
+                            <a href="<?php the_permalink() ?>">
+                            <img src="wp-content\themes\concombre\img\lightsabers.png" alt="" class="thumbnail me-1">
+                            <a href="" class="btn btn-danger">
                                 Voir plus</a>
+                                </a>
                         </div>
                     </div>
                 </div>
