@@ -56,11 +56,10 @@ $query2 = new WP_Query([
                 <!-- Content Row-->
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
-                        <?php the_post_thumbnail('thumbnail', ['class' => 'rounded mx-auto d-block']) ?>
                         <div class="card-body">
                             <h2 class="card-title"><?php the_title(); ?></h2>
                             <!-- genere la balise img -->
-                            <p> <?php the_excerpt() ?> </p>
+                            <p> <?php the_excerpt() ?>  <?php the_post_thumbnail('thumbnail', ['class'=>'rounded mx-auto d-block']) ?> </p>
                         </div>
                         <div class="card-footer">
                             <a href="<?php the_permalink() ?>" class="btn btn-primary">

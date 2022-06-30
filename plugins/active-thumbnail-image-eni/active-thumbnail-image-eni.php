@@ -9,10 +9,10 @@
 * Author URI:
 * Text Domain: active-image-avant-eni
 **/
-function my_theme_setup()
+function postThumbnail()
 {
     // active les images mises en avant dans Article (Post)
    add_theme_support('post-thumbnails');
 }
 // le crochet : le hook
-add_action('after_setup_theme','my_theme_setup');
+add_action('after_setup_theme','postThumbnail');
