@@ -36,13 +36,13 @@ $query2 = new WP_Query([
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
-        <div class="col-lg-6 d-flex justify-content-end">
+        <div class="col-lg-7 d-flex justify-content-end">
             <img class="image-front" src="wp-content\themes\concombre\img\screenshot.jpg" alt="">
         </div>
 
     </div>
     <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card text-white bg-dark my-5 py-4 text-center">
         <div class="card-body">
             <p class="text-white m-0"> <?php echo get_bloginfo('description') ?> </p>
         </div>
@@ -59,17 +59,23 @@ $query2 = new WP_Query([
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
-                            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail', ['class' => 'rounded mx-auto d-block']) ?></a>
-                            <h2 class="card-title"><?php the_title(); ?></h2>
-                            <!-- genere la balise img -->
-                            <p> <?php the_excerpt() ?> </p>
+                            <a href="<?php the_permalink() ?>">
+                                <?php if (has_post_thumbnail()) { ?>
+                                    <?php the_post_thumbnail('thumbnail', ['class' => 'rounded mx-auto d-block']) ?>
+                                <?php } else { ?>
+                                    <img src="wp-content\themes\concombre\img\fff.jpg" alt="" class="mx-auto d-block">  
+                                <?php } ?>                              
+                            </a>
+                            <h2 class=" card-title"><?php the_title(); ?></h2>
+                                    <!-- genere la balise img -->
+                                    <p> <?php the_excerpt() ?> </p>
                         </div>
                         <div class="card-footer text-center">
                             <a href="<?php the_permalink() ?>">
-                            <img src="wp-content\themes\concombre\img\lightsabers.png" alt="" class="thumbnail me-1">
-                            <a href="" class="btn btn-danger">
-                                Voir plus</a>
-                                </a>
+                                <img src="wp-content\themes\concombre\img\lightsabers.png" alt="" class="thumbnail me-1">
+                                <a href="" class="btn btn-danger">
+                                    Voir plus</a>
+                            </a>
                         </div>
                     </div>
                 </div>
