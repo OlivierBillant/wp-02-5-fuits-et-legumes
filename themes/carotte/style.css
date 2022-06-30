@@ -1,0 +1,23 @@
+/*
+Theme Name: Carrots
+Text Domain: carrots
+Version: 1.0.1
+Tested up to: 6.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: We do love carrots
+Tags: blog, one-page
+Author: ENI-QUIMPER
+Author URI: 
+Theme URI: 
+License:
+*/
+
+
+h1 {
+    color:red;
+}
+
+/* body {
+    background-color: blue;
+  } */
