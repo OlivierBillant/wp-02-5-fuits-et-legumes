@@ -36,9 +36,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
-            <a class="navbar-brand" href="<?php echo get_home_url() ?>/"> <img class="icon" src="<?= get_site_icon_url() ?>" width="25"><?php
-                                                                                                                                        bloginfo('name');
-                                                                                                                                        ?></a>
+            <a class="navbar-brand" href="<?php echo get_home_url() ?>/"> <img class="icon" src="<?= get_site_icon_url() ?>" width="25">
+                <?php bloginfo('name');?>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -51,10 +51,10 @@
                     <?php
                     $menuParameters = array(
                         'theme_location' => 'menu-haut',
-                        // 'menu_class' => 'text-light text-center',
-                        'container' => false,
-                        'echo' => '', // try: false
-                        'items_wrap' => '%3$s',
+                        'menu_class' => 'text-light text-center',
+                        // 'container' => false,
+                        'echo' => '', // try: false 
+                        // 'items_wrap' => '%3$s',
                     );
                     echo strip_tags(wp_nav_menu($menuParameters), '<a>');
                     ?>
