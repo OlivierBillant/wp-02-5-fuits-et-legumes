@@ -47,16 +47,17 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_home_url() ?>/about-us">About </a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php the_permalink(21) ?>">Contact</a></li>
                 </ul> -->
-                <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <div class="ms-auto">
                     <?php
                     $menuParameters = array(
                         'theme_location' => 'menu-haut',
-                        'menu_class' => 'text-light text-center',
+                        'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
                         // 'container' => false,
                         'echo' => '', // try: false 
                         // 'items_wrap' => '%3$s',
                     );
-                    echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+                    // echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+                    echo wp_nav_menu($menuParameters);
                     ?>
                 </div>
             </div>
